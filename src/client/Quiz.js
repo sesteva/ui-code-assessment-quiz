@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { useMachine } from "@xstate/react"
 import { quizMachine } from "./quiz-machine"
 import Button from 'antd/es/button'
-import { Summary, QuestionCard } from './Components'
+import { Summary } from './components/Summary'
+import { QuestionCard } from './components/Question'
 import 'antd/es/button/style/css'; 
 
 export const Quiz = () =>{
