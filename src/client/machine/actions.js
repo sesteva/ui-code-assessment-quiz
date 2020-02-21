@@ -1,4 +1,5 @@
 import { assign } from "xstate";
+import shuffle from "lodash.shuffle";
 
 const incrementDisplayedQuestions = assign({
   answers: (context, __) => ({
@@ -57,6 +58,13 @@ const setDefaultContext = assign((context, __) => {
   }
 })
 
+const randomizeQuestions = assign({
+  data: (context, event) => {    
+    const shuffled = shuffle(event.data.results);
+    return shuffled.slice(0, context.questionSetSize)    
+  }
+})
+
 export const defaultContext = {
   data: [],
   display: null,
@@ -73,5 +81,6 @@ export const actions = {
   pickNextQuestion,
   logResponse,
   calculateScore,
-  setDefaultContext
+  setDefaultContext,
+  randomizeQuestions
 }

@@ -1,6 +1,7 @@
-import { assign, Machine } from "xstate";
+import { Machine } from "xstate";
 import { services } from './services'
 import { actions, defaultContext } from './actions'
+import { guards } from "./guards"
 
 // We can play /test/discuss with the machine here -> https://xstate.js.org/viz/?gist=c48d51f8787b9a09bee29e816c452e1d
 // This is reusable across React, Angular, Vue, Server side, etc....
@@ -21,12 +22,10 @@ export const quizMachine = (questionSetSize = 3)=> Machine(
       },
       gettingQuestions: {
         invoke: {
-          src: "getQuestionsAndRandomize",
+          src: "getQuestions",
           onDone: {
             target: "question",
-            actions: assign({
-              data: (_, event) => event.data
-            })
+            actions: "randomizeQuestions"
           },
           onError: {
             target: 'failure'
@@ -39,13 +38,12 @@ export const quizMachine = (questionSetSize = 3)=> Machine(
           NEXT: [
             {
               target: "summary",
-              cond: (context, event) =>
-                typeof event.payload !== "undefined" && context.data.length === context.answers.total,
+              cond: "isTheLastQuestion",
               actions: "calculateScore"
             },
             { 
               target: "question",
-              cond: (_, event) => typeof event.payload !== "undefined"                          
+              cond: "didAnswer"
             }
           ]
         },
@@ -71,6 +69,7 @@ export const quizMachine = (questionSetSize = 3)=> Machine(
   },
   {
     actions,
-    services
+    services,
+    guards
   }
 );

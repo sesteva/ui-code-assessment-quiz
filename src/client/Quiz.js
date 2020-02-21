@@ -8,7 +8,7 @@ import 'antd/es/button/style/css';
 
 export const Quiz = () =>{
   const [answer, setAnswer] = useState()  
-  const quizMachineInstance = quizMachine(3)
+  const quizMachineInstance = quizMachine(10)
   const [current, send] = useMachine(quizMachineInstance)  
   const {display, answers} = current.context
 
