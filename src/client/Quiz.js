@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useMachine } from "@xstate/react"
-import { quizMachine } from "./machine/quiz-machine"
+import { quizMachine } from "./machine"
 import Button from 'antd/es/button'
 import { Summary } from './components/Summary'
 import { QuestionCard } from './components/Question'
