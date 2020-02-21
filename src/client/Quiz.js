@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useMachine } from "@xstate/react"
-import { quizMachine } from "./quiz-machine"
+import { quizMachine } from "./machine/quiz-machine"
 import Button from 'antd/es/button'
 import { Summary } from './components/Summary'
 import { QuestionCard } from './components/Question'
@@ -33,7 +33,7 @@ export const Quiz = () =>{
       {current.matches("summary") && <Summary results={answers} /> }
       {current.matches("failure") && <div>Error: {current.meta.message}</div>}
       
-      <div class="buttons">
+      <div className="buttons">
         <Button onClick={startQuiz} data-show="idle" type="primary">Start</Button>  
         <Button onClick={nextQuestion} data-show="question" type="primary">Next</Button>
         <Button onClick={restart} data-show="summary" type="primary">Restart</Button>

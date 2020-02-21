@@ -1,5 +1,11 @@
 # Notes
 
+## Typescript
+I've rapidly noticed the default setup is Typescript.
+While I really like TS, we have just recently adopted it and Im still learning.
+I've decided to default to ES6 and focus on demosntrating other concepts.
+
+
 ## Randomizing Results
 
 Ideally I would delegate the randomization on the backend, via adding a a parameter to a query on GraphQL or adding a flag or new route if doing REST.
