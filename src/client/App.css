@@ -1,0 +1,21 @@
+[data-state="idle"] [data-show]:not([data-show="idle"]) {
+  display: none;
+}
+
+[data-state="question"] [data-show]:not([data-show="question"]) {
+  display: none;
+}
+
+[data-state="summary"] [data-show]:not([data-show="summary"]) {
+  display: none;
+}
+
+[data-state="failure"] [data-show]:not([data-show="failure"]) {
+  display: none;
+}
+
+.buttons {
+  margin-top: 1.5rem;
+  float:right;
+}
+

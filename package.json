@@ -10,11 +10,16 @@
     "build": "react-scripts build"
   },
   "dependencies": {
+    "@xstate/react": "^0.8.1",
+    "antd": "^3.26.11",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "he": "^1.2.0",
+    "lodash.shuffle": "^4.2.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "xstate": "^4.7.8"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",
