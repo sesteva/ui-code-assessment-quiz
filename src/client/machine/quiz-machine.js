@@ -3,9 +3,6 @@ import { services } from './services'
 import { actions, defaultContext } from './actions'
 import { guards } from "./guards"
 
-// We can play /test/discuss with the machine here -> https://xstate.js.org/viz/?gist=c48d51f8787b9a09bee29e816c452e1d
-// This is reusable across React, Angular, Vue, Server side, etc....
-
 export const quizMachine = (questionSetSize = 3)=> Machine(
   {
     id: "quiz",
