@@ -8,11 +8,10 @@
     "start:client": "react-scripts start",
     "start": "concurrently npm:start:client npm:start:server",
     "build": "react-scripts build",
-    "test": "jest --runInBand --watch",
+    "test": "jest --runInBand",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless",
     "test:e2e": "start-server-and-test start http://localhost:3000 cypress:run"
-
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.1.1",
