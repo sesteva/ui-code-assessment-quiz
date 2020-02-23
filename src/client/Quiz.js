@@ -23,9 +23,9 @@ export const Quiz = () =>{
     send('RESTART')
   }
 
-  //TODO: replace hardcode text with const or Symbol
-  //TODO: document two methods to not render or hide dependeing on state
-  //TODO: update viz with more basic flow and include failure etc
+  // Note 1: Two techniques are used below to decide content to render (current.matches) or to hide ( custom attr data-show and css definition)
+  // Note 2: The state machine abstracts all the logic and our DOM related components become simple.
+  
   return (
     <div data-state={current.value}>  
         

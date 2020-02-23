@@ -4,7 +4,7 @@ async function getQuestions(_,__) {
     const data = await response.json();
     return data
   } catch (err) {
-    //TODO: do something here such as Log to monitoring, alert user, etc
+    //do something here such as Log to monitoring, alert user, etc
     throw new Error(err)
   }
 }
